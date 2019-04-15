@@ -52,7 +52,11 @@ public class MainActivity extends AppCompatActivity {
     private static Mat descriptors= new Mat(), dupDescriptors= new Mat();
     final static ORB detector  = ORB.create();
     final static DescriptorMatcher matcher = DescriptorMatcher.create(DescriptorMatcher.BRUTEFORCE_HAMMING);
-
+    static {
+        if (!OpenCVLoader.initDebug()) {
+            // Handle initialization error
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i("ImageComparator", "Error in image Comparator");
 
         }
-        run();
+       // run();
 
 
     }
