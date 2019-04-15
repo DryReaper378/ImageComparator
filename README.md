@@ -1,0 +1,2 @@
+# ImageComparator
+Нифига не работает!
